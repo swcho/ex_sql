@@ -1,0 +1,13 @@
+select TEAM_ID, AVG(HEIGHT)
+from PLAYER
+group by TEAM_ID;
+
+-- 삼성블루윙즈의 평균키보다 작은 팀 조회
+select TEAM_ID, AVG(HEIGHT)
+from PLAYER
+group by TEAM_ID
+having AVG(HEIGHT) < (
+	select avg(HEIGHT)
+	from PLAYER
+	where TEAM_ID='K02'
+);

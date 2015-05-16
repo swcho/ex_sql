@@ -1,0 +1,3 @@
+-- select count(*) from SCHEDULE 
+-- select t.TEAM_NAME, count(s.SCHE_DATE) from TEAM t, SCHEDULE s where t.TEAM_ID=s.HOMETEAM_ID
+select t.TEAM_NAME, count(s.SCHE_DATE) from TEAM t, SCHEDULE s where t.TEAM_ID=s.HOMETEAM_ID group by t.TEAM_NAME

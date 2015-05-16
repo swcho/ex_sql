@@ -1,0 +1,42 @@
+select PLAYER_NAME, BACK_NO, POSITION 
+from PLAYER
+where TEAM_ID='K02'
+union
+select PLAYER_NAME, BACK_NO, POSITION 
+from PLAYER
+where POSITION='GK';
+select PLAYER_NAME, BACK_NO, POSITION 
+from PLAYER
+where TEAM_ID='K02'
+union all
+select PLAYER_NAME, BACK_NO, POSITION 
+from PLAYER
+where POSITION='GK';
+
+-- intersect example
+
+-- select PLAYER_NAME, BACK_NO, POSITION 
+-- from PLAYER
+-- where TEAM_ID='K02'
+-- intersect
+-- select PLAYER_NAME, BACK_NO, POSITION 
+-- from PLAYER
+-- where POSITION='GK';
+
+select p1.TEAM_ID, p1.PLAYER_NAME, p1.BACK_NO, p1.POSITION 
+from PLAYER p1
+ 	where p1.TEAM_ID='K02' and p1.POSITION='GK';
+
+-- minus example
+
+-- select PLAYER_NAME, BACK_NO, POSITION 
+-- from PLAYER
+-- where TEAM_ID='K02'
+-- MINUS
+-- select PLAYER_NAME, BACK_NO, POSITION 
+-- from PLAYER
+-- where POSITION='GK';
+
+select PLAYER_NAME, BACK_NO, POSITION 
+from PLAYER
+where TEAM_ID='K02' and not POSITION='GK';

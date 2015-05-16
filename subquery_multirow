@@ -1,0 +1,11 @@
+select TEAM_ID
+from PLAYER
+where PLAYER_NAME='정현수';
+
+select TEAM_ID, PLAYER_NAME
+from PLAYER
+where TEAM_ID in (
+	select TEAM_ID
+	from PLAYER
+	where PLAYER_NAME='정현수'
+);

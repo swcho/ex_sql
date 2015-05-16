@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - ex_sql@localhost" uuid="230e8379-25a3-4162-9e6a-945d82d39fa7">
+    <database-info product="MySQL" version="5.5.43-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="ex_sql"/>
+    <table name="PLAYER" schema="" catalog="ex_sql" type="TABLE">
+      <column name="PLAYER_ID" sqlType="CHAR" precision="7" scale="0" nullable="false" jdbcType="1"/>
+      <column name="PLAYER_NAME" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="TEAM_ID" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1"/>
+      <column name="E_PLAYER_NAME" sqlType="VARCHAR" precision="40" scale="0" nullable="true" jdbcType="12"/>
+      <column name="NICKNAME" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="JOIN_YYYY" sqlType="CHAR" precision="4" scale="0" nullable="true" jdbcType="1"/>
+      <column name="POSITION" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="BACK_NO" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="NATION" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="BIRTH_DATE" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="SOLAR" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <column name="HEIGHT" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="WEIGHT" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="PLAYER_ID"/>
+      <foreign-key name="PLAYER_FK" columns="TEAM_ID" ref-table="TEAM" ref-schema="" ref-catalog="ex_sql" ref-columns="TEAM_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="PLAYER_FK" unique="false" columns="TEAM_ID"/>
+    </table>
+    <table name="PLAYER_K00" schema="" catalog="ex_sql" type="TABLE">
+      <column name="PLAYER_ID" sqlType="CHAR" precision="7" scale="0" nullable="false" jdbcType="1"/>
+      <column name="PLAYER_NAME" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="TEAM_ID" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1"/>
+      <column name="POSITION" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="BACK_NO" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+    </table>
+    <table name="SCHEDULE" schema="" catalog="ex_sql" type="TABLE">
+      <column name="STADIUM_ID" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1"/>
+      <column name="SCHE_DATE" sqlType="CHAR" precision="8" scale="0" nullable="false" jdbcType="1"/>
+      <column name="GUBUN" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <column name="HOMETEAM_ID" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1"/>
+      <column name="AWAYTEAM_ID" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1"/>
+      <column name="HOME_SCORE" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="AWAY_SCORE" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="STADIUM_ID,SCHE_DATE"/>
+      <foreign-key name="SCHEDULE_FK" columns="STADIUM_ID" ref-table="STADIUM" ref-schema="" ref-catalog="ex_sql" ref-columns="STADIUM_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="STADIUM" schema="" catalog="ex_sql" type="TABLE">
+      <column name="STADIUM_ID" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1"/>
+      <column name="STADIUM_NAME" sqlType="VARCHAR" precision="40" scale="0" nullable="true" jdbcType="12"/>
+      <column name="HOMETEAM_ID" sqlType="CHAR" precision="3" scale="0" nullable="true" jdbcType="1"/>
+      <column name="SEAT_COUNT" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="ADDRESS" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <column name="DDD" sqlType="VARCHAR" precision="3" scale="0" nullable="true" jdbcType="12"/>
+      <column name="TEL" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="STADIUM_ID"/>
+      <exported-key name="SCHEDULE_FK" table="SCHEDULE" schema="" catalog="ex_sql" columns="STADIUM_ID"/>
+      <exported-key name="TEAM_FK" table="TEAM" schema="" catalog="ex_sql" columns="STADIUM_ID"/>
+    </table>
+    <table name="TEAM" schema="" catalog="ex_sql" type="TABLE">
+      <column name="TEAM_ID" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1"/>
+      <column name="REGION_NAME" sqlType="VARCHAR" precision="8" scale="0" nullable="false" jdbcType="12"/>
+      <column name="TEAM_NAME" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <column name="E_TEAM_NAME" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ORIG_YYYY" sqlType="CHAR" precision="4" scale="0" nullable="true" jdbcType="1"/>
+      <column name="STADIUM_ID" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1"/>
+      <column name="ZIP_CODE1" sqlType="CHAR" precision="3" scale="0" nullable="true" jdbcType="1"/>
+      <column name="ZIP_CODE2" sqlType="CHAR" precision="3" scale="0" nullable="true" jdbcType="1"/>
+      <column name="ADDRESS" sqlType="VARCHAR" precision="80" scale="0" nullable="true" jdbcType="12"/>
+      <column name="DDD" sqlType="VARCHAR" precision="3" scale="0" nullable="true" jdbcType="12"/>
+      <column name="TEL" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="FAX" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="HOMEPAGE" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="OWNER" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="TEAM_ID"/>
+      <foreign-key name="TEAM_FK" columns="STADIUM_ID" ref-table="STADIUM" ref-schema="" ref-catalog="ex_sql" ref-columns="STADIUM_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="PLAYER_FK" table="PLAYER" schema="" catalog="ex_sql" columns="TEAM_ID"/>
+      <index name="TEAM_FK" unique="false" columns="STADIUM_ID"/>
+    </table>
+  </data-source>
+</component>

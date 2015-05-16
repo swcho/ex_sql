@@ -1,0 +1,13 @@
+select TEAM_ID, avg(HEIGHT)
+from PLAYER
+group by TEAM_ID;
+
+-- 각 팀별로 각 팀의 평균키보다 작은 선수들의 정보
+select TEAM_ID, PLAYER_NAME, BACK_NO, POSITION, HEIGHT
+from PLAYER MP
+where HEIGHT < (
+	select avg(height)
+	from PLAYER SP
+	where SP.TEAM_ID=MP.TEAM_ID
+	group by SP.TEAM_ID)
+order by TEAM_ID;

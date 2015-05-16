@@ -1,0 +1,5 @@
+insert into PLAYER_K00
+(select PLAYER_ID, PLAYER_NAME, TEAM_ID, POSITION, BACK_NO
+from PLAYER
+where TEAM_ID='k07'
+);

@@ -1,0 +1,1 @@
+select t.TEAM_NAME, p.PLAYER_NAME from TEAM t, PLAYER p where t.TEAM_ID=p.TEAM_ID

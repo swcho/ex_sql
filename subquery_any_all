@@ -1,0 +1,20 @@
+
+-- meet any condition, in case of >, minimum value
+select PLAYER_NAME, HEIGHT
+from PLAYER
+where not POSITION='FW'
+and HEIGHT > ANY (
+	select HEIGHT 
+	from PLAYER
+	where POSITION='FW'
+);
+
+-- meet all condition, in case of >, maximum value
+select PLAYER_NAME, HEIGHT
+from PLAYER
+where not POSITION='FW'
+and HEIGHT > ALL (
+	select HEIGHT 
+	from PLAYER
+	where POSITION='FW'
+);

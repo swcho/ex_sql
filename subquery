@@ -1,0 +1,14 @@
+select PLAYER_NAME, BACK_NO, POSITION 
+from PLAYER
+where TEAM_ID=(
+	select TEAM_ID 
+	from PLAYER
+	where PLAYER_NAME='하성용'
+);
+select TEAM_ID 
+from PLAYER
+where PLAYER_NAME='하성용';
+
+select avg(HEIGHT) from PLAYER;
+
+

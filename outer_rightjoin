@@ -1,0 +1,2 @@
+INSERT INTO STADIUM VALUES ('ccc','경기장','K15',66422,'대구광역시 수성구 대흥동 504','053','602-2011');
+select t.TEAM_NAME, s.STADIUM_NAME from TEAM t right join STADIUM s on t.STADIUM_ID=s.STADIUM_ID

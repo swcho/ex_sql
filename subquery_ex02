@@ -1,0 +1,20 @@
+-- 포지션 별로 가장 키가 큰 선수
+select POSITION, MAX(HEIGHT)
+from PLAYER
+group by POSITION
+having not POSITION='';
+
+-- select T.TEAM_NAME, P.PLAYER_NAME, P.POSITION, P.HEIGHT
+-- from PLAYER P, TEAM T
+-- where P.HEIGHT=(select POSITION, MAX(HEIGHT)
+-- from PLAYER
+-- group by POSITION
+-- having not POSITION='')
+
+select POSITION, HEIGHT, PLAYER_NAME
+from PLAYER P
+where (POSITION, HEIGHT) in (
+	select POSITION, MAX(HEIGHT)
+	from PLAYER
+	group by POSITION)
+order by POSITION, HEIGHT;

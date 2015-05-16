@@ -1,0 +1,6 @@
+#alter table `TEAM` drop `captain`;
+alter table `TEAM` add `captain` char(7);
+desc `TEAM`;
+alter table `TEAM` modify `captain` char(20);
+#alter table `TEAM` drop `captain`;
+desc `TEAM`;

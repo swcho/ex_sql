@@ -1,0 +1,10 @@
+-- 삼성블루윙즈와 전남드래곤즈 선수 중 포지션이 포워드인 선수를 조회
+select T.TEAM_NAME, P.PLAYER_NAME, P.POSITION
+from PLAYER P, TEAM T
+where P.TEAM_ID=T.TEAM_ID
+and T.TEAM_ID='K02'
+union
+select T.TEAM_NAME, P.PLAYER_NAME, P.POSITION
+from PLAYER P, TEAM T
+where P.TEAM_ID=T.TEAM_ID
+and T.TEAM_ID='K07';
