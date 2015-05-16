@@ -1,0 +1,6 @@
+테이블 생성 및 자료 추가에 참조하시기 바랍니다. 
+1.cr_tab.sql - 테이블생성 스크립트 
+2.ins_sta.sql - 테이블 STADIUM_T 자료추가 스크립트 
+3.ins_tea.sql - 테이블 TEAM_T 자료추가 스크립트
+4.ins_pla.sql - 테이블 PLAYER_T 자료추가 스크립트 
+5.ins_sch.sql - 테이블 SCHEDULE_T 자료추가 스크립트 
