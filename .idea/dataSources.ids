@@ -7,6 +7,26 @@
     </database-info>
     <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
     <schema name="" catalog="ex_sql"/>
+    <table name="DEPT" schema="" catalog="ex_sql" type="TABLE">
+      <column name="DEPTNO" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="DNAME" sqlType="VARCHAR" precision="14" scale="0" nullable="true" jdbcType="12"/>
+      <column name="LOC" sqlType="VARCHAR" precision="13" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="DEPTNO"/>
+      <exported-key name="FK_DEPTNO" table="EMP" schema="" catalog="ex_sql" columns="DEPTNO"/>
+    </table>
+    <table name="EMP" schema="" catalog="ex_sql" type="TABLE">
+      <column name="EMPNO" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="ENAME" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="JOB" sqlType="VARCHAR" precision="9" scale="0" nullable="true" jdbcType="12"/>
+      <column name="MGR" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="HIREDATE" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="SAL" sqlType="DECIMAL" precision="7" scale="2" nullable="true" jdbcType="3"/>
+      <column name="COMM" sqlType="DECIMAL" precision="7" scale="2" nullable="true" jdbcType="3"/>
+      <column name="DEPTNO" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="EMPNO"/>
+      <foreign-key name="FK_DEPTNO" columns="DEPTNO" ref-table="DEPT" ref-schema="" ref-catalog="ex_sql" ref-columns="DEPTNO" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_DEPTNO" unique="false" columns="DEPTNO"/>
+    </table>
     <table name="PLAYER" schema="" catalog="ex_sql" type="TABLE">
       <column name="PLAYER_ID" sqlType="CHAR" precision="7" scale="0" nullable="false" jdbcType="1"/>
       <column name="PLAYER_NAME" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
