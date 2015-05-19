@@ -1,0 +1,4 @@
+
+select PLAYER_NAME, BIRTH_DATE
+from PLAYER
+where TEAM_ID='K02'
