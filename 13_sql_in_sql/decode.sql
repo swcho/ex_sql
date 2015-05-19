@@ -1,0 +1,18 @@
+-- 부서별로 월별 입사자의 평균 급여
+
+-- 개별 데이터 확인
+select ENAME, DEPTNO, EXTRACT(MONTH FROM HIREDATE) MONTH, SAL from EMP;
+
+-- 월별 데이터 구분
+select ENAME, DEPTNO,
+  DECODE(MONTH, 1, SAL) M01
+  DECODE(MONTH, 2, SAL) M01
+from (select ENAME, DEPTNO, EXTRACT(MONTH FROM HIREDATE) MONTH, SAL from EMP);
+
+-- 월별 데이터 평균
+select DEPTNO,
+  AVG(DECODE(MONTH, 1, SAL)) M01,
+  AVG(DECODE(MONTH, 2, SAL)) M01
+from (select ENAME, DEPTNO, EXTRACT(MONTH FROM HIREDATE) MONTH, SAL from EMP);
+group by DEPTNO
+order by DEPTNO
