@@ -13314,6 +13314,70 @@
       <primary-key name="PK_EMP" columns="EMPNO"/>
       <foreign-key name="FK_DEPTNO" columns="DEPTNO" ref-table="DEPT" ref-schema="TEST_USER" ref-catalog="" ref-columns="DEPTNO" update-rule="0" delete-rule="1" deferrability="2"/>
     </table>
+    <table name="PLAYER_T" schema="TEST_USER" catalog="" type="TABLE">
+      <column name="PLAYER_ID" sqlType="CHAR" precision="7" scale="0" nullable="false" jdbcType="1"/>
+      <column name="PLAYER_NAME" sqlType="VARCHAR2" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="TEAM_ID" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1"/>
+      <column name="E_PLAYER_NAME" sqlType="VARCHAR2" precision="40" scale="0" nullable="true" jdbcType="12"/>
+      <column name="NICKNAME" sqlType="VARCHAR2" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="JOIN_YYYY" sqlType="CHAR" precision="4" scale="0" nullable="true" jdbcType="1"/>
+      <column name="POSITION" sqlType="VARCHAR2" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="BACK_NO" sqlType="NUMBER" precision="2" scale="0" nullable="true" jdbcType="3"/>
+      <column name="NATION" sqlType="VARCHAR2" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="BIRTH" sqlType="DATE" precision="7" scale="0" nullable="true" jdbcType="93"/>
+      <column name="SOLAR" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <column name="HEIGHT" sqlType="NUMBER" precision="3" scale="0" nullable="true" jdbcType="3"/>
+      <column name="WEIGHT" sqlType="NUMBER" precision="3" scale="0" nullable="true" jdbcType="3"/>
+      <primary-key name="PLAYER_T_PK" columns="PLAYER_ID"/>
+      <foreign-key name="PLAYER_T_FK" columns="TEAM_ID" ref-table="TEAM_T" ref-schema="TEST_USER" ref-catalog="" ref-columns="TEAM_ID" update-rule="0" delete-rule="1" deferrability="2"/>
+    </table>
+    <table name="SCHEDULE_T" schema="TEST_USER" catalog="" type="TABLE">
+      <column name="GUBUN" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <column name="STADIUM_ID" sqlType="VARCHAR2" precision="5" scale="0" nullable="false" jdbcType="12"/>
+      <column name="SCHE_DATE" sqlType="CHAR" precision="8" scale="0" nullable="false" jdbcType="1"/>
+      <column name="HOMETEAM_ID" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1"/>
+      <column name="AWAYTEAM_ID" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1"/>
+      <column name="HOME_SCORE" sqlType="NUMBER" precision="2" scale="0" nullable="true" jdbcType="3"/>
+      <column name="AWAY_SCORE" sqlType="NUMBER" precision="2" scale="0" nullable="true" jdbcType="3"/>
+      <primary-key name="SCHEDULE_T_PK" columns="GUBUN,STADIUM_ID,SCHE_DATE"/>
+    </table>
+    <table name="STADIUM_T" schema="TEST_USER" catalog="" type="TABLE">
+      <column name="STADIUM_ID" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1"/>
+      <column name="STADIUM_NAME" sqlType="VARCHAR2" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="HOMETEAM_ID" sqlType="CHAR" precision="3" scale="0" nullable="true" jdbcType="1"/>
+      <column name="SEAT_COUNT" sqlType="NUMBER" precision="0" scale="-127" nullable="true" jdbcType="3"/>
+      <column name="ADDRESS" sqlType="VARCHAR2" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <column name="DDD" sqlType="VARCHAR2" precision="3" scale="0" nullable="true" jdbcType="12"/>
+      <column name="TEL" sqlType="VARCHAR2" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="STADIUM_T_PK" columns="STADIUM_ID"/>
+      <exported-key name="TEAM_T_FK" table="TEAM_T" schema="TEST_USER" catalog="" columns="STADIUM_ID"/>
+    </table>
+    <table name="TEAM_HISTORY_T" schema="TEST_USER" catalog="" type="TABLE">
+      <column name="TEAM_ID" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1"/>
+      <column name="YYYY" sqlType="CHAR" precision="4" scale="0" nullable="false" jdbcType="1"/>
+      <column name="SEQ" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="COMMENTS" sqlType="VARCHAR2" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="TEAM_HISTORY_T_PK" columns="TEAM_ID,YYYY,SEQ"/>
+    </table>
+    <table name="TEAM_T" schema="TEST_USER" catalog="" type="TABLE">
+      <column name="TEAM_ID" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1"/>
+      <column name="REGION_NAME" sqlType="VARCHAR2" precision="4" scale="0" nullable="false" jdbcType="12"/>
+      <column name="TEAM_NAME" sqlType="VARCHAR2" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="E_TEAM_NAME" sqlType="VARCHAR2" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ORIG_YYYY" sqlType="CHAR" precision="4" scale="0" nullable="true" jdbcType="1"/>
+      <column name="STADIUM_ID" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1"/>
+      <column name="ZIP_CODE1" sqlType="CHAR" precision="3" scale="0" nullable="true" jdbcType="1"/>
+      <column name="ZIP_CODE2" sqlType="CHAR" precision="3" scale="0" nullable="true" jdbcType="1"/>
+      <column name="ADDRESS" sqlType="VARCHAR2" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <column name="DDD" sqlType="VARCHAR2" precision="3" scale="0" nullable="true" jdbcType="12"/>
+      <column name="TEL" sqlType="VARCHAR2" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="FAX" sqlType="VARCHAR2" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="HOMEPAGE" sqlType="VARCHAR2" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="OWNER" sqlType="VARCHAR2" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="TEAM_T_PK" columns="TEAM_ID"/>
+      <foreign-key name="TEAM_T_FK" columns="STADIUM_ID" ref-table="STADIUM_T" ref-schema="TEST_USER" ref-catalog="" ref-columns="STADIUM_ID" update-rule="0" delete-rule="1" deferrability="2"/>
+      <exported-key name="PLAYER_T_FK" table="PLAYER_T" schema="TEST_USER" catalog="" columns="TEAM_ID"/>
+    </table>
     <procedure name="BLASTN_ALIGN" schema="SYS" catalog="" type="2" remarks="U3RhbmRhbG9uZSBwcm9jZWR1cmUgb3IgZnVuY3Rpb24=">
       <prototype>
         <parameter name="QUERY_SEQUENCE" sqlType="CLOB" precision="0" scale="0" nullable="true" jdbcType="1111" type="1" index="2"/>
@@ -42505,5 +42569,8 @@
         <parameter name="" sqlType="UNDEFINED" precision="0" scale="0" nullable="true" jdbcType="1111" type="5" index="0"/>
       </prototype>
     </procedure>
+    <procedure name="COUNT_POSITION" schema="TEST_USER" catalog="" type="2" remarks="U3RhbmRhbG9uZSBwcm9jZWR1cmUgb3IgZnVuY3Rpb24="/>
+    <procedure name="GET_SCHEDULE_COUNT" schema="TEST_USER" catalog="" type="1" remarks="U3RhbmRhbG9uZSBwcm9jZWR1cmUgb3IgZnVuY3Rpb24="/>
+    <procedure name="SELECT_SCHEDULE" schema="TEST_USER" catalog="" type="1" remarks="U3RhbmRhbG9uZSBwcm9jZWR1cmUgb3IgZnVuY3Rpb24="/>
   </data-source>
 </component>

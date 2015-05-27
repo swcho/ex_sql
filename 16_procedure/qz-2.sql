@@ -1,0 +1,24 @@
+-- # K-리그에서 포지션 별 총 인원수를 조회하는 FUNCTION을 작성하라.
+-- # Function 명은 COUNT_POSITION으로 하고, 파라미터는 V_POSITION로 하고 데이터 타입은 CHAR(2)으로 한다.
+-- # 리턴값의 데이터 타입은 NUMBER로 정의한다.
+-- # V_POSITION에 포지션 코드를 넣으면 총 인원수를 리턴한다.
+-- # 오류 발생은 고려하지 않는다.
+
+CREATE OR REPLACE FUNCTION COUNT_POSITION(
+  V_POSITION IN CHAR
+)
+  RETURN NUMBER
+IS
+  V_RETURN NUMBER := 0;
+BEGIN
+  SELECT COUNT(*) INTO V_RETURN
+  FROM PLAYER
+  WHERE POSITION = V_POSITION;
+  RETURN V_RETURN;
+END ;
+
+  COMMIT ;
+
+EXECUTE COUNT_POSITION('');
+
+SELECT POSITION, COUNT_POSITION(POSITION) FROM PLAYER_T GROUP BY POSITION;
