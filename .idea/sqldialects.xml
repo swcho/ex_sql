@@ -7,6 +7,7 @@
     <file url="file://$PROJECT_DIR$/16_procedure/qz_01.sql" dialect="OracleSqlPlus" />
     <file url="file://$PROJECT_DIR$/16_procedure/trigger.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/18_optimizer_01/ex_01.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/18_optimizer_01/qz_01.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/sqls/1/cr_tab.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/sqls/1/ins_pla.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/sqls/1/ins_sch.sql" dialect="Oracle" />
