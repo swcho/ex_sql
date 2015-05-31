@@ -22,21 +22,19 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="48f3743b-86f2-4ee1-a217-4f5f33bf9e06">
-        <schema name="PUBLIC" object-types="function, materialized view, package, sequence, synonym, table, type, view" />
-        <schema name="TEST_USER" object-types="cluster, column, constraint, dblink, dimension, function, index, materialized view, nested table, package, procedure, sequence, synonym, table, trigger, trigger, type, view" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-list connection-id="48f3743b-86f2-4ee1-a217-4f5f33bf9e06" dataset="TEST_USER.SCHEDULE_T" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
-    <mapping file-url="file://$PROJECT_DIR$/19_optimizer_02/ex_01_using_index.sql" connection-id="48f3743b-86f2-4ee1-a217-4f5f33bf9e06" current-schema="TEST_USER" />
-    <mapping file-url="file://$PROJECT_DIR$/19_optimizer_02/ex_02_using_index_null.sql" connection-id="48f3743b-86f2-4ee1-a217-4f5f33bf9e06" current-schema="ANONYMOUS" />
-    <mapping file-url="file://$PROJECT_DIR$/19_optimizer_02/ex_03_using_index_not.sql" connection-id="48f3743b-86f2-4ee1-a217-4f5f33bf9e06" current-schema="TEST_USER" />
     <mapping file-url="file://$PROJECT_DIR$/19_optimizer_02/ex_05_using_index_fast_scan.sql" connection-id="48f3743b-86f2-4ee1-a217-4f5f33bf9e06" current-schema="TEST_USER" />
+    <mapping file-url="file://$PROJECT_DIR$/20_optimizer_03/ex_01_join_order.sql" connection-id="48f3743b-86f2-4ee1-a217-4f5f33bf9e06" current-schema="TEST_USER" />
+    <mapping file-url="file://$PROJECT_DIR$/19_optimizer_02/ex_03_using_index_not.sql" connection-id="48f3743b-86f2-4ee1-a217-4f5f33bf9e06" current-schema="TEST_USER" />
+    <mapping file-url="file://$PROJECT_DIR$/19_optimizer_02/ex_02_using_index_null.sql" connection-id="48f3743b-86f2-4ee1-a217-4f5f33bf9e06" current-schema="ANONYMOUS" />
+    <mapping file-url="file://$PROJECT_DIR$/19_optimizer_02/ex_01_using_index.sql" connection-id="48f3743b-86f2-4ee1-a217-4f5f33bf9e06" current-schema="TEST_USER" />
+    <mapping file-url="file://$PROJECT_DIR$/20_optimizer_03/ex_02_.sql" connection-id="48f3743b-86f2-4ee1-a217-4f5f33bf9e06" current-schema="TEST_USER" />
+    <mapping file-url="file://$PROJECT_DIR$/20_optimizer_03/ex_02_using_in.sql" connection-id="48f3743b-86f2-4ee1-a217-4f5f33bf9e06" current-schema="TEST_USER" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
