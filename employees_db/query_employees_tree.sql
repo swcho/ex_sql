@@ -1,0 +1,1 @@
+SELECT * FROM employees, departments, dept_emp where dept_emp.dept_no = departments.dept_no and dept_emp.emp_no = employees.emp_no;
