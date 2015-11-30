@@ -21,14 +21,17 @@ def get_tracker_ids(project_id):
 
 
 def get_tracker_issues(project_id, tracker_id):
-
-    cursor.execute('SELECT i.subject, i.description, i.due_date'
-                   'FROM issues i WHERE i.project_id = %s AND i.tracker_id = %s' % (project_id, tracker_id))
-
-    issues = cursor.fetchall()
-    for i_subject, i_description in issues:
-        print i_description
-    # print json.dumps(result)
+    cursor.execute('SELECT * FROM issues i WHERE i.project_id = %s AND i.tracker_id = %s' % (project_id, tracker_id))
+    issues = dictfetchall(cursor)
+    for issue in issues:
+        for key in issue:
+            if isinstance(issue[key], long):
+                issue[key] = int(issue[key])
+            elif isinstance(issue[key], (datetime.datetime, datetime.date)):
+                issue[key] = str(issue[key])
+            # elif isinstance(issue[key], (unicode)):
+            #     issue[key] = issue[key]
+        print issue
 
     # cursor.execute('SELECT cft.custom_field_id FROM custom_fields_trackers cft WHERE cft.tracker_id = %s' % tracker_id)
     # for custom_field_id in cursor.fetchall():
